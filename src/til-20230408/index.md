@@ -1,11 +1,12 @@
-# minimal python
+---
+title: pdf to text
+date: 2023-04-08
+lastmod: 2023-04-08
+---
 
-python のコードを書くときに利用する最小限の設定です。
-ただし、ここでの対象は実行用スクリプトを開発することを想定しています。
-そのため、下記は対象外です。
+## 概要
 
-- pip インストール可能なライブラリ開発
-- pip インストール可能なツール開発
+PDF からテキストを抽出するためのスクリプトです。
 
 ## ファイル構成
 
@@ -37,8 +38,7 @@ docker compose -f docker-compose.yml -f .devcontainer/docker-compose.extend.yml 
 ## 仮想環境の構築
 
 仮想環境の構築には python 標準で付属している venv の利用を想定しています。
-スクリプトで必要なパッケージは `requirements.txt` に記載します。
-実際にインストール後は、 `requirements-freeze.txt` としてバージョンを固定します。
+スクリプトで必要なパッケージは `pyprojec.toml` に記載します。
 
 ```sh
 # create virtual env
@@ -47,14 +47,10 @@ python -m venv .venv
 # activate virtual env(linux)
 source .venv/bin/activate
 # or (windows)
-source .venv/Scripts/activate.ps1
+.venv/Scripts/activate
 
 # install packages
 pip install -e .[dev,test]
-
-# freeze version
-pip freeze > constraint.txt
-pip install -e .[dev,test] -c constraint.txt
 ```
 
 ## code style
