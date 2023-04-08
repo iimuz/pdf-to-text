@@ -3,3 +3,6 @@ inerim/*
 
 processed/*
 !processed/.gitkeep
+
+raw/*
+!raw/.gitkeep
