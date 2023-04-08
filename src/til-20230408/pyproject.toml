@@ -8,7 +8,11 @@ requires-python = ">=3.10"
 urls = {repository = "https://github.com/iimuz/til/til-20230408"}
 version = "1.0.0"
 
-dependencies = []
+dependencies = [
+  "pymupdf",
+  "pydantic",
+  "tqdm",
+]
 
 [tools.setuptools.package-dir]
 pdf_to_text = "src"
